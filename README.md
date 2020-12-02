@@ -11,3 +11,4 @@ node app.js
 ### Observaciones
 
 El programa solo cubre hasta el paso 2 indicado en el ejercicio.
+Utilice naming convention (_private) para simular propiedas y metodos privados de las clases, ya que JS no soporta este feature.
