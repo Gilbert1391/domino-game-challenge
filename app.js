@@ -168,6 +168,18 @@ class Player extends Domino {
     this.tiles.delete(tile);
   }
 
+  // This algorithm of this method is buggy
+  // it is putting into the arr tiles that are not playable
+  /* example: 
+    Current Board [ '[6,6]', '[6,5]', '[6,1]' ] 
+    Player current tiles: ['[4,3]', '[5,5]', '[4,0]', '[5,4]', '[1,0]', '[6,0]', '[5,0]']
+
+    playable tiles should be: ['[6,0]', '[1,0]']
+    but the result is: [ '[5,5]', '[5,4]', '[1,0]', '[6,0]', '[5,0]' ]
+    because it is comparing tiles with each tile of the arr
+    instead of comparing only with the first and last of the list
+    plus tiles probably have to be flipped too
+  */
   getPlayableTiles() {
     const result = [];
     const boardTiles = this.getBoardTiles();
